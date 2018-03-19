@@ -9,7 +9,7 @@ no_exps = int(sys.argv[3])
 
 points = np.loadtxt('data/Aedes_aegypti/scaffold_positions/scaffold_positions_chr'+chromosome)
 data_file = 'data/Aedes_aegypti/HIC002/chromosomes/chr'+chromosome+'.data'
-folder = 'data/Aedes_aegypti/HIC002/error_rates/'
+folder = 'experiments/Aedes_aegypti/HIC002/error_rates/'
 
 #Variable scaffolds
 print ("Running experiments (SG, MG, BP, LP) for variable length contigs")
