@@ -13,9 +13,9 @@ folder = 'data/Aedes_aegypti/HIC002/error_rates/'
 
 #Variable scaffolds
 print ("Running experiments (SG, MG, BP, LP) for variable length contigs")
-run_parallel.parallel_variable(chromosome, points, data_file, folder, no_process=32, no_exps=1)
+run_parallel.parallel_variable(chromosome, points, data_file, folder, no_process=no_process, no_exps=no_exps)
 
 
 
 print ("Running experiments (SG, MG, BP, LP) for 1000k length contigs")
-run_parallel.parallel_100k(chromosome, points, data_file, folder, no_process=32, no_exps=1)
+run_parallel.parallel_100k(chromosome, points, data_file, folder, no_process=no_process, no_exps=no_exps)
