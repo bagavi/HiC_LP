@@ -9,7 +9,7 @@ no_exps = int(sys.argv[3])
 
 points = np.loadtxt('data/Gasterosteus/scaffold_positions/scaffold_positions_chr'+chromosome)
 data_file = 'data/Gasterosteus/chromosomes/chr'+chromosome+'.data'
-folder = 'experiments/Gasterosteus/error_rates/'
+folder = 'real_dataset_experiments/Gasterosteus/error_rates/'
 
 #Variable scaffolds
 print ("Running experiments (SG, MG, BP, LP) for variable length contigs")
