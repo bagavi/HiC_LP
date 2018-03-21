@@ -12,8 +12,9 @@ data_file = 'data/Gasterosteus/chromosomes/chr'+chromosome+'.data'
 folder = 'real_dataset_experiments/Gasterosteus/error_rates/'
 
 #Variable scaffolds
-print ("Running experiments (SG, MG, BP, LP) for variable length contigs")
-run_parallel.parallel_variable(chromosome, points, data_file, folder, no_process=no_process, no_exps=no_exps)
+if chromosome!="1":
+    print ("Running experiments (SG, MG, BP, LP) for variable length contigs")
+    run_parallel.parallel_variable(chromosome, points, data_file, folder, no_process=no_process, no_exps=no_exps)
 
 
 print ("Running experiments (SG, MG, BP, LP) for 1000k length contigs")

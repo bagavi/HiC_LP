@@ -64,8 +64,8 @@ def Measurement_matrix_equal(data_file,length, sampling_frac=1, columns=['Pos1',
     for i, row in enumerate(pos_array[:int(L*sampling_frac)]):
 #        if i%42000 ==0:
 #            print i*100/L, 
-        x = math.floor(row[0]/length)
-        y = math.floor(row[1]/length)
+        x = int(math.floor(row[0]/length))
+        y = int(math.floor(row[1]/length))
         M_full[x][y] += 1
     M_full = M_full + M_full.T
     return M_full
@@ -240,9 +240,8 @@ def Solve_BP(M, n_steps):
 
         if accuracy[l] == 1:
             accuracy[l:] = accuracy[l]
-            break
-        if l > 10 and np.mean(accuracy[l-5:l]==accuracy[l-10:l-5]) == 1:
-            accuracy[l:] = accuracy[l]
+        if l > 50 and abs(np.mean(accuracy[l-25:l]) - np.mean(accuracy[l-50:l-25])) < 0.001: 
+            accuracy[l:] = np.mean(accuracy[l-25:l])
             break
     M_final = BP_matrix[l%2]
     M_final[np.diag_indices_from(M_final)] = np.inf

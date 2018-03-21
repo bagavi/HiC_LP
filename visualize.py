@@ -51,8 +51,8 @@ def plot(simple_greedy_file, merge_greedy_file, lp_greedy_file, bp_greedy_file):
         plt.axvline(np.log(stats['n'])/stats['signal_mean'], label= 'IT limit')
     except:
         pass
-    plt.xlabel("sampling frac")
-    plt.ylabel("error")
+    plt.xlabel("Sampling fraction", fontsize=20)
+    plt.ylabel("Error", fontsize=20)
     plt.ylim((0,.8))
     plt.legend()
     
@@ -77,14 +77,15 @@ def plotvariable(folder, chromosome):
     LP_greedy_file     = folder+"variable_LP_stricter_greedy"+chromosome+".csv"
     BP_greedy_file     = folder+"variable_BP_stricter_greedy"+chromosome+".csv"
     plot(simple_greedy_file, merge_greedy_file, LP_greedy_file, BP_greedy_file)
-    plt.title("Variable contigs of chromosome "+chromosome)
+    plt.title("Variable contigs of chromosome "+chromosome, fontsize=25)
     plt.show()
     
-def plot_100k(folder, chromosome):
+def plot_100k(folder, chromosome, xlim=1):
     simple_greedy_file = folder+"100000_simple_greedy_chr"+chromosome+".csv"
     merge_greedy_file  = folder+"100000_merge_greedy_chr"+chromosome+".csv"
     LP_greedy_file     = folder+"100000_LP_greedy_chr"+chromosome+".csv"
     BP_greedy_file     = folder+"100000_BP_greedy_chr"+chromosome+".csv"
     plot(simple_greedy_file, merge_greedy_file, LP_greedy_file, BP_greedy_file)
+    plt.xlim(0,xlim)
     plt.title("Variable contigs of chromosome "+chromosome)
     plt.show()
