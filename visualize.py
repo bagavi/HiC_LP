@@ -36,7 +36,7 @@ def plot(simple_greedy_file, merge_greedy_file, lp_greedy_file, bp_greedy_file):
     mg_sf_array, mg_error_array, mg_fp_array = return_results(merge_greedy_file)
     lp_sf_array, lp_error_array, lp_fp_array = return_results(lp_greedy_file)
     bp_sf_array, bp_error_array, bp_fp_array = return_results(bp_greedy_file)
-
+    print lp_fp_array, lp_error_array/2.
     plt.figure(figsize=(20,6))
     plt.plot(sg_sf_array, sg_error_array/6+sg_fp_array*(2.0/3.0), '--', lw = 2, label="Greedy", 
              color = current_palette[0], alpha = 0.7)
@@ -54,7 +54,7 @@ def plot(simple_greedy_file, merge_greedy_file, lp_greedy_file, bp_greedy_file):
     plt.xlabel("Sampling fraction", fontsize=20)
     plt.ylabel("Error", fontsize=20)
     plt.ylim((0,.8))
-    plt.legend()
+    plt.legend(fontsize=16)
     
 def plotsemilogy(simple_greedy_file, merge_greedy_file, lp_greedy_file):
     sg_sf_array, sg_error_array, sg_fp_array = return_results(simple_greedy_file)
